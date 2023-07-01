@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'ABeeZee', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+.section{
+    position: relative;
+    top:71px;
+    display: flex;
+    height:100vh;
+}
+.left-section{
+    width:15%;
+    position:fixed;
+    background-color: black;
+    color: white;
+}
+input[type="checkbox"]{
+    accent-color: pink;
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    height:2px;
+    accent-color: yellow;
+}
+.colors, .sizes, .color-size, .price-range, .btn-filter{
+    margin:10px;
+    padding:15px 10px;
+}
+.rating{
+    padding-bottom: 15px;
+}
+.color-size{
+    display: flex;
+    justify-content: space-between;
+}
+.colors, .sizes, .rating{
+    border-bottom: 1px solid white;
+}
+label{
+    font-size: 15px;
+}
+.filter-btn{
+    background-color: black;
+    color: white;
+    border:1px solid white;
+    padding:10px 20px;
+}
+
+.right-section{
+    width:82%;
+    position: relative;
+    left:15%;
+    padding:20px 0 0 20px;
+}
+.search-bar{
+    border:1px solid black;
+    width:100%;
+}
+.search-bar input{
+    width:95%;
+    border:none;
+    padding: 10px 0 10px 20px;
+}
+.search-bar input:focus{
+    outline: none;
+}
+.fa-magnifying-glass{
+    margin-left: 15px;
+}
+.search-btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.search-btns button{
+    width:19%;
+    padding:10px;
+    background-color: white;
+    border:1px solid black;
+    cursor: pointer;
+}
+h2{
+    margin-top:30px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+#men-section, #women-section, #electronic-section, #jewellery-section{
+    display: flex;
+    justify-content:flex-start;
+    gap:12px;
+    flex-wrap: wrap;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    height:max-content;
+    border:1px solid black;
+    border-radius: 20px;
+    width:300px;
+    padding:5px 0px 0px 0px;
+    box-shadow: 0px 0px 10px black;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+.image{
+    width: 100%;
+    height:300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 1px solid black;
+}
+.title{
+    width:80%;
+    height:70px;
+}
+.title,.price,.rating{
+    margin-left: 20px;
+}
+.text-center button{
+    width:100%;
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding:10px 0 10px 0;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+    cursor: pointer;
+}
+.price{
+    color:magenta;
+}
+
+.black{
+    background-color: black !important;
+    color: white !important;
+}

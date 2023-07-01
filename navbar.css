@@ -1,0 +1,26 @@
+.navbar{
+    z-index: 1000;
+    width:98%;
+    position: fixed;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color:white;
+    padding:20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.logo-text{
+    font-size: 25px;
+}
+.menu-items{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    gap:20px;
+    font-size:20px;
+}
+.menu-items .menu-item a{
+    text-decoration: none;
+    color: white;
+}
