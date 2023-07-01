@@ -7,7 +7,6 @@ let rangeValue=document.getElementById("range-value");
 range.addEventListener("input",function(){
     rangeValue.innerText=range.value;
 });
-let cart=[];
 const colors=['RED','BLUE','GREEN','ORANGE','BLACK','VIOLET'];
 const sizes=['S','M','L','XL'];
 
@@ -76,6 +75,7 @@ fetch(`https://fakestoreapi.com/products`)
 for(let i=0; i<addToCart.length; i++){
     addToCart[i].addEventListener('click',function(event){
         let productsData=JSON.parse(localStorage.getItem("productsData"));
+        let  cart=JSON.parse(localStorage.getItem("cartData"))||[];
         cart.push(productsData[addToCart[i].id-1]);
         localStorage.setItem("cartData", JSON.stringify(cart));
         event.target.className="removeButton";
