@@ -19,13 +19,20 @@ cart.forEach(element => {
             <div class="text-center"><button class="removeItem" id="${element.id}">Remove from Cart</button></div>`;
             carItems.append(div);
 });
+function generateBill(cart){
+  let bill=0;
+  for(let i=0; i<cart.length; i++){
+    bill+=cart[i].price
+  }
+  return bill*82.10;
+}
 
 let heading3=document.getElementById('heading3');
-
+let total;
 if(cart.length > 0){
     heading3.style.display="block";
     let table=document.createElement("table");
-    let total=0;
+    total=0;
     cart.forEach(element => {
         let tr=document.createElement("tr");
         tr.innerHTML=`<td>${element.id}.</td><td>${element.title.slice(0,10)}</td><td>$${element.price}</td>`;
@@ -43,14 +50,16 @@ if(cart.length > 0){
     cartCheckoutList.append(button);
 }
 
+let amount=parseInt(generateBill(cart));
 
 
 
 let checkoutBtn=document.getElementById("checkoutBtn");
-checkoutBtn.addEventListener("click", function () {
+checkoutBtn.addEventListener("click", function (e) {
+  e.preventDefault();
     var options = {
         key: "rzp_test_xV39ZNbgU1Du4V", // Enter the Key ID generated from the Dashboard
-        amount: "100000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        amount: amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         currency: "INR",
         name: "MeShop. Checkout",
         description: "This is your order", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
