@@ -34,6 +34,7 @@ if(cart.length > 0){
         total+=element.price;
     });
     let tr2=document.createElement("tr");
+    tr2.className="total";
     tr2.innerHTML=`<td>Total</td><td>$ ${total.toFixed(2)}</td><td>Rs. ${(total*82.10).toFixed(2)}</td>`;
     table.append(tr2);
     let button=document.createElement('button');
@@ -41,3 +42,36 @@ if(cart.length > 0){
     button.innerText="Proceed to Checkout";
     cartCheckoutList.append(button);
 }
+
+
+
+
+let checkoutBtn=document.getElementById("checkoutBtn");
+checkoutBtn.addEventListener("click", function () {
+    var options = {
+        key: "rzp_test_xV39ZNbgU1Du4V", // Enter the Key ID generated from the Dashboard
+        amount: "100000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "MeShop. Checkout",
+        description: "This is your order", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        theme: {
+          color: "#122620",
+        },
+        image: "https://cdn-icons-png.flaticon.com/128/891/891419.png",
+        handler: function () {
+          location.href = "./shop.html";
+        },
+        options: {
+          checkout: {
+            method: {
+              netbanking: 0,
+              card: 0,
+              upi: 1,
+              wallet: 0,
+            },
+          },
+        },
+      };
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+  });
