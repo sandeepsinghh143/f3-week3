@@ -20,16 +20,24 @@ cart.forEach(element => {
             carItems.append(div);
 });
 
+let heading3=document.getElementById('heading3');
 
 if(cart.length > 0){
+    heading3.style.display="block";
     let table=document.createElement("table");
+    let total=0;
     cart.forEach(element => {
         let tr=document.createElement("tr");
         tr.innerHTML=`<td>${element.id}.</td><td>${element.title.slice(0,10)}</td><td>$${element.price}</td>`;
         table.append(tr);
         cartCheckoutList.append(table);
-    })
-    let tr2=document.createElement('tr');
-    tr.innerHTML=`<td>Total</td><td></td><td></td>`;
+        total+=element.price;
+    });
+    let tr2=document.createElement("tr");
+    tr2.innerHTML=`<td>Total</td><td>$ ${total.toFixed(2)}</td><td>Rs. ${(total*82.10).toFixed(2)}</td>`;
     table.append(tr2);
+    let button=document.createElement('button');
+    button.id="checkoutBtn";
+    button.innerText="Proceed to Checkout";
+    cartCheckoutList.append(button);
 }

@@ -29,6 +29,8 @@ function addUser(event){
             let users=JSON.parse(localStorage.getItem("usersData"))||[];
             users.push(user);
             localStorage.setItem("usersData", JSON.stringify(users));
+            alert("signup Success !!!!!!");
+            window.location.href="./login.html";
         }
     }else{
         alert("All fields are required");
